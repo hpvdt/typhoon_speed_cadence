@@ -7155,6 +7155,18 @@
 		)
 		(uuid "8abfe6e6-cf89-4888-9c48-e216d7579410")
 	)
+	(text "Can u clarify what you mean here?"
+		(exclude_from_sim no)
+		(at 192.786 31.496 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+				(color 255 153 60 1)
+			)
+		)
+		(uuid "8e0f5909-257f-4286-8082-6e733233e903")
+	)
 	(text "Are the connections to 5VA ok here? \nUSBC doesnt supply it's own power \nin our config right?\n\nAnd added the differential pair.\n"
 		(exclude_from_sim no)
 		(at 39.116 33.782 0)
