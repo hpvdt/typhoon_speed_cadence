@@ -8172,7 +8172,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0e7421d9-6edd-47ef-b880-19df43fc18f1")
-		(property "Reference" "C12"
+		(property "Reference" "C11"
 			(at 104.394 161.29 0)
 			(effects
 				(font
@@ -8226,7 +8226,7 @@
 		(instances
 			(project "SpeedCadence"
 				(path "/89ecd877-583f-465d-9957-1772400ea7b7"
-					(reference "C12")
+					(reference "C11")
 					(unit 1)
 				)
 			)
