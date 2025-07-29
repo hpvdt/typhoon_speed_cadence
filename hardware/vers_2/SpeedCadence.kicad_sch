@@ -8322,7 +8322,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" " B2B-XH-A-BK(LF)(SN)"
+		(property "Manufacturer Part Number" "B2B-XH-A-BK(LF)(SN)"
 			(at 213.36 30.48 0)
 			(effects
 				(font
@@ -8763,7 +8763,15 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
+		(property "Manufacturer Part Number" "CRCW08054K70FKEAC"
+			(at 252.73 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" "Vishay"
 			(at 252.73 60.96 0)
 			(effects
 				(font
@@ -8840,7 +8848,15 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
+		(property "Manufacturer Part Number" "CRCW08052M70FKEA"
+			(at 110.49 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" "Vishay"
 			(at 110.49 162.56 0)
 			(effects
 				(font
@@ -8991,7 +9007,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" " CC0805KRX7R9BB104"
+		(property "Manufacturer Part Number" "CC0805KRX7R9BB104"
 			(at 91.44 162.56 0)
 			(effects
 				(font
@@ -9160,7 +9176,15 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
+		(property "Manufacturer Part Number" "STM32F103C8T6"
+			(at 77.47 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" "STMicroelectronics"
 			(at 77.47 82.55 0)
 			(effects
 				(font
@@ -9516,7 +9540,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" " CC0805KRX7R9BB104"
+		(property "Manufacturer Part Number" "CC0805KRX7R9BB104"
 			(at 52.07 43.18 0)
 			(effects
 				(font
@@ -9674,7 +9698,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" " CC0805KRX7R9BB104"
+		(property "Manufacturer Part Number" "CC0805KRX7R9BB104"
 			(at 63.5 30.48 0)
 			(effects
 				(font
@@ -9753,7 +9777,15 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
+		(property "Manufacturer Part Number" "TPSM861253RDXR"
+			(at 118.11 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" "Texas Instruments"
 			(at 118.11 157.48 0)
 			(effects
 				(font
@@ -9846,7 +9878,15 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
+		(property "Manufacturer Part Number" "CRCW08054K70FKEAC"
+			(at 209.55 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" "Vishay"
 			(at 209.55 69.85 0)
 			(effects
 				(font
@@ -9997,7 +10037,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" " CC0805KRX7R9BB104"
+		(property "Manufacturer Part Number" "CC0805KRX7R9BB104"
 			(at 43.18 30.48 0)
 			(effects
 				(font
@@ -10206,7 +10246,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" " FTSH-107-01-L-DV-K-A"
+		(property "Manufacturer Part Number" "FTSH-107-01-L-DV-K-A"
 			(at 49.53 162.56 0)
 			(effects
 				(font
@@ -10520,7 +10560,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" "Murata"
+		(property "MANUFACTURER" "Murata Electronics"
 			(at 43.18 69.85 0)
 			(effects
 				(font
@@ -10530,7 +10570,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
+		(property "Manufacturer Part Number" "CSTNE8M00G52Z000R0"
 			(at 43.18 69.85 0)
 			(effects
 				(font
@@ -10778,7 +10818,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" " 5975906507F"
+		(property "Manufacturer Part Number" "5975906507F"
 			(at 256.54 102.87 0)
 			(effects
 				(font
@@ -11007,7 +11047,15 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
+		(property "Manufacturer Part Number" "SKQGABE010"
+			(at 22.86 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" "Alps Alpine"
 			(at 22.86 49.53 0)
 			(effects
 				(font
@@ -11312,7 +11360,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" " CC0805KRX7R9BB104"
+		(property "Manufacturer Part Number" "CC0805KRX7R9BB104"
 			(at 124.46 114.3 0)
 			(effects
 				(font
@@ -11454,7 +11502,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" " B4B-XH-A(LF)(SN)"
+		(property "Manufacturer Part Number" "B4B-XH-A(LF)(SN)"
 			(at 241.3 63.5 0)
 			(effects
 				(font
@@ -11680,7 +11728,15 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
+		(property "Manufacturer Part Number" "TCAN3414DR"
+			(at 142.24 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" "Texas Instruments"
 			(at 142.24 104.14 0)
 			(effects
 				(font
@@ -12041,7 +12097,15 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
+		(property "Manufacturer Part Number" "CR0805-JW-331ELF"
+			(at 247.65 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" "Bourns"
 			(at 247.65 102.87 0)
 			(effects
 				(font
@@ -12127,7 +12191,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" " GRM21BZ71A226ME15L"
+		(property "Manufacturer Part Number" "GRM21BZ71A226ME15L"
 			(at 154.94 162.56 0)
 			(effects
 				(font
@@ -12421,7 +12485,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" " B2B-XH-A-BK(LF)(SN)"
+		(property "Manufacturer Part Number" "B2B-XH-A-BK(LF)(SN)"
 			(at 190.5 149.86 0)
 			(effects
 				(font
@@ -12647,7 +12711,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" " CC0805KRX7R9BB104"
+		(property "Manufacturer Part Number" "CC0805KRX7R9BB104"
 			(at 53.34 30.48 0)
 			(effects
 				(font
@@ -12734,7 +12798,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" " CC0805KRX7R9BB104"
+		(property "Manufacturer Part Number" "CC0805KRX7R9BB104"
 			(at 33.02 30.48 0)
 			(effects
 				(font
@@ -12812,7 +12876,15 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
+		(property "Manufacturer Part Number" "SKQGABE010"
+			(at 46.99 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" "Alps Alpine"
 			(at 46.99 43.18 0)
 			(effects
 				(font
@@ -13018,7 +13090,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" " DX07S016JA3R1500"
+		(property "Manufacturer Part Number" "DX07S016JA3R1500"
 			(at 135.89 46.99 0)
 			(effects
 				(font
@@ -13452,7 +13524,15 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
+		(property "Manufacturer Part Number" "RC0805JR-0710KL"
+			(at 22.86 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" "YAGEO"
 			(at 22.86 59.69 0)
 			(effects
 				(font
@@ -13596,7 +13676,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "P0603Y60R0BBT"
+		(property "Manufacturer Part Number" "RG2012N-121-W-T1"
 			(at 203.2 107.95 0)
 			(effects
 				(font
@@ -13605,7 +13685,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER" "Vishay / Sfernice"
+		(property "MANUFACTURER" "Susumu"
 			(at 203.2 107.95 0)
 			(effects
 				(font
@@ -13880,7 +13960,15 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
+		(property "Manufacturer Part Number" "CRCW08054K70FKEAC"
+			(at 260.35 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" "Vishay"
 			(at 260.35 60.96 0)
 			(effects
 				(font
