@@ -5381,7 +5381,7 @@
 		(uuid df701595-f087-4942-a249-de0bd83f5eec)
 	)
 	(rectangle
-		(start 116.84 19.05)
+		(start 116.84 16.51)
 		(end 186.69 83.82)
 		(stroke
 			(width 0)
@@ -5661,12 +5661,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a173572d-6aa1-4a14-9db1-a018a2a8f385")
-	)
-	(junction
-		(at 203.2 107.95)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a23b2976-9027-4a7f-a001-915c1f0976d8")
 	)
 	(junction
 		(at 91.44 157.48)
@@ -6462,16 +6456,6 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 107.95) (xy 203.2 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5554db61-a9ad-4c1c-ab1b-01e8d8802f87")
-	)
-	(wire
-		(pts
 			(xy 77.47 123.19) (xy 77.47 124.46)
 		)
 		(stroke
@@ -6522,7 +6506,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 118.11) (xy 203.2 116.84)
+			(xy 203.2 111.76) (xy 203.2 118.11)
 		)
 		(stroke
 			(width 0)
@@ -6779,16 +6763,6 @@
 			(type default)
 		)
 		(uuid "7e56cc77-5169-496e-b484-2a210297745c")
-	)
-	(wire
-		(pts
-			(xy 203.2 106.68) (xy 203.2 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8063a285-f047-43ff-b5ca-51dbed80f33c")
 	)
 	(wire
 		(pts
@@ -7102,7 +7076,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 97.79) (xy 203.2 99.06)
+			(xy 203.2 97.79) (xy 203.2 104.14)
 		)
 		(stroke
 			(width 0)
@@ -7372,16 +7346,6 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 107.95) (xy 204.47 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e1da08a7-564c-4f9f-9581-f85cafb0d047")
-	)
-	(wire
-		(pts
 			(xy 91.44 157.48) (xy 91.44 158.75)
 		)
 		(stroke
@@ -7472,16 +7436,6 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 107.95) (xy 213.36 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ebf30b51-afd3-4f43-91d9-475016424ded")
-	)
-	(wire
-		(pts
 			(xy 63.5 34.29) (xy 63.5 35.56)
 		)
 		(stroke
@@ -7489,16 +7443,6 @@
 			(type default)
 		)
 		(uuid "edd2a9b2-866b-4dd3-b20f-cfea6e37ebdf")
-	)
-	(wire
-		(pts
-			(xy 212.09 107.95) (xy 213.36 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "efd6d265-8a46-495a-a112-fd7faf2b913f")
 	)
 	(wire
 		(pts
@@ -8378,6 +8322,24 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer Part Number" " B2B-XH-A-BK(LF)(SN)"
+			(at 213.36 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "JST Commercial"
+			(at 213.36 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2f307a18-ed71-4765-b403-2b063b15f501")
 		)
@@ -8467,7 +8429,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0e7421d9-6edd-47ef-b880-19df43fc18f1")
-		(property "Reference" "C11"
+		(property "Reference" "C10"
 			(at 104.394 161.29 0)
 			(effects
 				(font
@@ -8512,6 +8474,24 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER" "Murata Electronics"
+			(at 101.6 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "GRM21BR71A106KA73K"
+			(at 101.6 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ecba204f-ca1e-4a13-9c83-a7dc7e84bdbf")
 		)
@@ -8521,7 +8501,7 @@
 		(instances
 			(project "SpeedCadence"
 				(path "/89ecd877-583f-465d-9957-1772400ea7b7"
-					(reference "C11")
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -8647,6 +8627,14 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer Part Number" ""
+			(at 250.19 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "SpeedCadence"
 				(path "/89ecd877-583f-465d-9957-1772400ea7b7"
@@ -8730,7 +8718,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "211d1f83-c2ce-4e01-bd50-a4e05202a825")
-		(property "Reference" "R6"
+		(property "Reference" "R5"
 			(at 254 59.69 0)
 			(effects
 				(font
@@ -8775,6 +8763,14 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer Part Number" ""
+			(at 252.73 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "9d7b6be9-8b94-4bad-9859-15da37ed3e03")
 		)
@@ -8784,7 +8780,7 @@
 		(instances
 			(project "SpeedCadence"
 				(path "/89ecd877-583f-465d-9957-1772400ea7b7"
-					(reference "R6")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -8799,7 +8795,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "23b40e84-cb7b-47dc-bcd2-77894deea073")
-		(property "Reference" "R9"
+		(property "Reference" "R8"
 			(at 112.268 161.29 0)
 			(effects
 				(font
@@ -8844,6 +8840,14 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer Part Number" ""
+			(at 110.49 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "e2cb4ec5-7b1e-49ad-9411-7bde73c1589d")
 		)
@@ -8853,7 +8857,7 @@
 		(instances
 			(project ""
 				(path "/89ecd877-583f-465d-9957-1772400ea7b7"
-					(reference "R9")
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -8929,7 +8933,7 @@
 		(at 91.44 162.56 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "2ef1b56a-2a4e-459c-983c-5ff8e7b93c1f")
@@ -8970,6 +8974,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 91.44 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "YAGEO"
+			(at 91.44 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" " CC0805KRX7R9BB104"
 			(at 91.44 162.56 0)
 			(effects
 				(font
@@ -9038,6 +9060,24 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated"
+			(at 199.39 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "B3B-XH-A(LF)(SN) "
+			(at 199.39 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "JST Commercial"
 			(at 199.39 64.77 0)
 			(effects
 				(font
@@ -9118,6 +9158,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" ""
+			(at 77.47 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "19"
@@ -9410,7 +9458,7 @@
 		(at 52.07 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "41f5ab27-f5ea-4fda-ad6e-c24e2fdc8b0d")
@@ -9451,6 +9499,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 52.07 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "YAGEO"
+			(at 52.07 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" " CC0805KRX7R9BB104"
 			(at 52.07 43.18 0)
 			(effects
 				(font
@@ -9528,6 +9594,14 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer Part Number" ""
+			(at 231.14 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "SpeedCadence"
 				(path "/89ecd877-583f-465d-9957-1772400ea7b7"
@@ -9542,7 +9616,7 @@
 		(at 63.5 30.48 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "43366ab2-7080-4316-b88d-d82efcd006d8")
@@ -9583,6 +9657,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 63.5 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "YAGEO"
+			(at 63.5 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" " CC0805KRX7R9BB104"
 			(at 63.5 30.48 0)
 			(effects
 				(font
@@ -9661,6 +9753,14 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer Part Number" ""
+			(at 118.11 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "e40a2f01-a4d9-4979-b724-43c4a694f7f1")
 		)
@@ -9701,7 +9801,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4aa46ef7-c2bc-4331-94be-9db9baad305f")
-		(property "Reference" "R7"
+		(property "Reference" "R6"
 			(at 212.09 68.5799 0)
 			(effects
 				(font
@@ -9746,6 +9846,14 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer Part Number" ""
+			(at 209.55 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "a8e7fc89-ff85-427a-9cbe-f94bbd6500d3")
 		)
@@ -9755,73 +9863,7 @@
 		(instances
 			(project ""
 				(path "/89ecd877-583f-465d-9957-1772400ea7b7"
-					(reference "R7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 213.36 109.22 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5febedd7-eec0-41e4-9943-080f784c5d87")
-		(property "Reference" "#PWR023"
-			(at 213.36 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 213.36 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 213.36 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 213.36 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 213.36 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7145b636-79c2-45f8-b1a3-e3bcfe84da39")
-		)
-		(instances
-			(project ""
-				(path "/89ecd877-583f-465d-9957-1772400ea7b7"
-					(reference "#PWR023")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -9897,7 +9939,7 @@
 		(at 43.18 30.48 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "61c8c5d1-450a-44a1-b644-31d086cc010c")
@@ -9938,6 +9980,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 43.18 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "YAGEO"
+			(at 43.18 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" " CC0805KRX7R9BB104"
 			(at 43.18 30.48 0)
 			(effects
 				(font
@@ -10146,6 +10206,24 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer Part Number" " FTSH-107-01-L-DV-K-A"
+			(at 49.53 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "Samtec"
+			(at 49.53 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "13"
 			(uuid "386402a7-98ce-4078-8a45-4d7def7940cf")
 		)
@@ -10250,6 +10328,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" ""
+			(at 250.19 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(instances
@@ -10444,6 +10530,14 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer Part Number" ""
+			(at 43.18 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "2437c396-18aa-4573-89c3-9d5138980920")
 		)
@@ -10529,75 +10623,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 203.2 113.03 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "7f9416fd-f7d8-4147-a126-5b8ee82a41b8")
-		(property "Reference" "R4"
-			(at 197.866 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "60"
-			(at 197.866 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 201.422 113.03 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 203.2 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 203.2 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a25b25a7-59ef-4970-bd67-32d1edb1a900")
-		)
-		(pin "2"
-			(uuid "79b10b9e-41ff-44b9-89c3-d566c1a2490a")
-		)
-		(instances
-			(project "SpeedCadence"
-				(path "/89ecd877-583f-465d-9957-1772400ea7b7"
-					(reference "R4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:D_Schottky")
 		(at 251.46 27.94 0)
 		(unit 1)
@@ -10642,6 +10667,24 @@
 			)
 		)
 		(property "Description" "Schottky diode"
+			(at 251.46 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "Diodes Incorporated"
+			(at 251.46 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "1N5819HW-7-F"
 			(at 251.46 27.94 0)
 			(effects
 				(font
@@ -10718,6 +10761,24 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
+			(at 256.54 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "Dialight"
+			(at 256.54 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" " 5975906507F"
 			(at 256.54 102.87 0)
 			(effects
 				(font
@@ -10859,6 +10920,24 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER" "Diodes Incorporated"
+			(at 238.76 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "1N5819HW-7-F"
+			(at 238.76 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "bcc1b21d-7636-4c95-b1ca-82a0e4d215b4")
 		)
@@ -10928,6 +11007,14 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer Part Number" ""
+			(at 22.86 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "02f0e85e-c42b-44f5-b7c7-a4a8a8a7ccc9")
 		)
@@ -10987,6 +11074,24 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 157.48 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "RC0805JR-075K1L"
+			(at 157.48 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "YAGEO"
 			(at 157.48 39.37 0)
 			(effects
 				(font
@@ -11149,7 +11254,7 @@
 		(at 124.46 114.3 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "8d126fd0-a3bd-4c67-806a-66a47b1865cb")
@@ -11190,6 +11295,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 124.46 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "YAGEO"
+			(at 124.46 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" " CC0805KRX7R9BB104"
 			(at 124.46 114.3 0)
 			(effects
 				(font
@@ -11323,6 +11446,24 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated"
+			(at 241.3 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" " B4B-XH-A(LF)(SN)"
+			(at 241.3 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "JST Commercial"
 			(at 241.3 63.5 0)
 			(effects
 				(font
@@ -11539,6 +11680,14 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer Part Number" ""
+			(at 142.24 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "8d51d2e5-9e27-4eb4-96a5-6133982a7460")
 		)
@@ -11633,73 +11782,6 @@
 			(project ""
 				(path "/89ecd877-583f-465d-9957-1772400ea7b7"
 					(reference "#PWR03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 208.28 107.95 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a751e103-08dd-4183-a0bd-ce47e27a8a3d")
-		(property "Reference" "C10"
-			(at 208.28 101.854 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "4.7n"
-			(at 208.28 104.394 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 212.09 106.9848 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 208.28 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 208.28 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "0fe5c0cf-8cd1-45db-a9eb-b7c0b80a71cc")
-		)
-		(pin "1"
-			(uuid "e615afbb-43c0-4430-aff3-cf6ac3a9d0e1")
-		)
-		(instances
-			(project ""
-				(path "/89ecd877-583f-465d-9957-1772400ea7b7"
-					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -11890,6 +11972,14 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer Part Number" ""
+			(at 231.14 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project ""
 				(path "/89ecd877-583f-465d-9957-1772400ea7b7"
@@ -11908,7 +11998,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b59b424f-4cd7-4029-b1fc-f00366570ccd")
-		(property "Reference" "R10"
+		(property "Reference" "R9"
 			(at 247.65 97.536 90)
 			(effects
 				(font
@@ -11951,6 +12041,14 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer Part Number" ""
+			(at 247.65 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "eea0c86b-fec3-4372-8485-fbc492b4b576")
 		)
@@ -11960,7 +12058,7 @@
 		(instances
 			(project ""
 				(path "/89ecd877-583f-465d-9957-1772400ea7b7"
-					(reference "R10")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -12012,6 +12110,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 154.94 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "Murata Electronics"
+			(at 154.94 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" " GRM21BZ71A226ME15L"
 			(at 154.94 162.56 0)
 			(effects
 				(font
@@ -12219,6 +12335,24 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER" "Murata Electronics"
+			(at 73.66 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "GRM21BR71A106KA73K"
+			(at 73.66 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b431e698-1abb-47f3-b4b0-c47817fbce76")
 		)
@@ -12279,6 +12413,24 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 190.5 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" " B2B-XH-A-BK(LF)(SN)"
+			(at 190.5 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "JST Commercial"
 			(at 190.5 149.86 0)
 			(effects
 				(font
@@ -12437,7 +12589,7 @@
 		(at 53.34 30.48 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "d655d3f5-3fbf-494e-a718-f8676483a867")
@@ -12486,6 +12638,24 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER" "YAGEO"
+			(at 53.34 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" " CC0805KRX7R9BB104"
+			(at 53.34 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "4eed1a7d-74fc-41a9-879c-53cb9a849e64")
 		)
@@ -12506,7 +12676,7 @@
 		(at 33.02 30.48 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "dae7f2fa-27a4-4b44-ad7b-96f3d9c3afb4")
@@ -12547,6 +12717,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 33.02 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "YAGEO"
+			(at 33.02 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" " CC0805KRX7R9BB104"
 			(at 33.02 30.48 0)
 			(effects
 				(font
@@ -12622,6 +12810,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" ""
+			(at 46.99 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -12822,6 +13018,24 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer Part Number" " DX07S016JA3R1500"
+			(at 135.89 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "JAE Electronics"
+			(at 135.89 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "A1"
 			(uuid "a1c91d15-12d6-4b45-9e91-39b474d9a8cf")
 		)
@@ -12935,6 +13149,24 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer Part Number" "0ZCJ0020FF2E"
+			(at 160.02 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "Bel Fuse"
+			(at 160.02 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0c73d910-89fc-4397-8b1f-64543358ed65")
 		)
@@ -12994,6 +13226,24 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 157.48 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "RC0805JR-075K1L"
+			(at 157.48 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "YAGEO"
 			(at 157.48 41.91 0)
 			(effects
 				(font
@@ -13157,7 +13407,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f3ad222a-5f58-4f79-b612-2ded3de25d68")
-		(property "Reference" "R8"
+		(property "Reference" "R7"
 			(at 24.638 58.42 0)
 			(effects
 				(font
@@ -13202,6 +13452,14 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer Part Number" ""
+			(at 22.86 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "ca2e1efd-7c58-451d-90f2-01ddc993eb4b")
 		)
@@ -13211,7 +13469,7 @@
 		(instances
 			(project "SpeedCadence"
 				(path "/89ecd877-583f-465d-9957-1772400ea7b7"
-					(reference "R8")
+					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -13286,7 +13544,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 203.2 102.87 0)
+		(at 203.2 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13294,7 +13552,7 @@
 		(dnp no)
 		(uuid "fc04a3ba-5a2e-4817-895b-31563ed1c84e")
 		(property "Reference" "R3"
-			(at 197.866 101.6 0)
+			(at 197.866 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13302,8 +13560,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "60"
-			(at 197.866 104.14 0)
+		(property "Value" "120"
+			(at 197.866 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13311,8 +13569,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 201.422 102.87 90)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 201.422 107.95 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13321,7 +13579,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 203.2 102.87 0)
+			(at 203.2 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13330,7 +13588,25 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 203.2 102.87 0)
+			(at 203.2 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "P0603Y60R0BBT"
+			(at 203.2 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "Vishay / Sfernice"
+			(at 203.2 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13559,7 +13835,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ffe84ae1-3e67-4f86-a849-c7ff2948a9f8")
-		(property "Reference" "R5"
+		(property "Reference" "R4"
 			(at 261.62 59.69 0)
 			(effects
 				(font
@@ -13604,6 +13880,14 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer Part Number" ""
+			(at 260.35 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "85b402ab-9a06-4c07-9b19-0e24690f6d21")
 		)
@@ -13613,7 +13897,7 @@
 		(instances
 			(project ""
 				(path "/89ecd877-583f-465d-9957-1772400ea7b7"
-					(reference "R5")
+					(reference "R4")
 					(unit 1)
 				)
 			)
