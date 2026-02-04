@@ -32,7 +32,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+//#define SPEED_SENSING
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -92,6 +92,7 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
+#ifdef SPEED_SENSING
   uint32_t magnet_count = 0;
   GPIO_PinState last_hall_state = GPIO_PIN_SET;
 	#define AVG_SIZE 5
@@ -109,12 +110,15 @@ int main(void)
   ssd1306_SetCursor(5,5);
   ssd1306_WriteString("SPEED ", Font_16x24, White);
   ssd1306_UpdateScreen();
+
+#endif
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+#ifdef SPEED_SENSING
 	  uint32_t now = HAL_GetTick();
 	        GPIO_PinState current_hall_state = HAL_GPIO_ReadPin(HALLEFFECT_GPIO_Port, HALLEFFECT_Pin);
 
@@ -197,6 +201,13 @@ int main(void)
 	            // Push data to the screen
 	            ssd1306_UpdateScreen();
 	        }
+#endif
+
+#ifndef SPEED_SENSING
+	 HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+	 HAL_Delay(500);
+#endif
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
