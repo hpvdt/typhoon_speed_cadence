@@ -32,7 +32,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-//#define SPEED_SENSING
+#define SPEED_SENSING
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
