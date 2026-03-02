@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "ssd1306.h"
@@ -32,7 +33,12 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define SPEED_SENSING
+//Average size of the rolling average
+#define AVG_SIZE 8
+#define WHEEL_RADIUS_MM 325.5f //(DIMENSIONS IN MM)
+#define PI 3.14159265f
+#define magnet_count 1 //Accounts for the amount of magnets placed on the wheel
+#define RPM_TO_KMH_FACTOR ((2.0f * PI * WHEEL_RADIUS_MM * 60.0f) / 1000000.0f)
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -44,7 +50,19 @@
 I2C_HandleTypeDef hi2c1;
 
 /* USER CODE BEGIN PV */
+// Use volatile so the compiler knows it changes in an ISR, Flag Variables
+volatile uint8_t magnet_flag = 0;
+volatile uint32_t pulse_time = 0;
 
+//Calculation variables
+uint32_t time_diffs[AVG_SIZE] = {0};
+float speed_kmh = 0.0f;
+uint8_t avg_index = 0;
+uint32_t last_time = 0;
+uint32_t last_display_time = 0;
+float filtered_rpm = 0.0f;
+uint8_t samples_collected = 0;
+uint32_t running_sum = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -91,122 +109,102 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-
-#ifdef SPEED_SENSING
-  uint32_t magnet_count = 0;
-  GPIO_PinState last_hall_state = GPIO_PIN_SET;
-	#define AVG_SIZE 5
-#define WHEEL_RADIUS_MM 325.5f	   // Set your wheel radius in millimeters here
-#define PI 3.14159265f
-  	uint32_t time_diffs[AVG_SIZE] = {0};
-  	float speed_kmh = 0.0f;
-  uint8_t avg_index = 0;
-  uint32_t last_time = 0;
-  uint32_t last_display_time = 0;
-  float filtered_rpm = 0.0f;
-  uint8_t samples_collected = 0; // Ensures we don't average zeros at the start
-
+  //Initializes the first text to the I2C display
   ssd1306_Init();
   ssd1306_SetCursor(5,5);
-  ssd1306_WriteString("SPEED ", Font_16x24, White);
+  ssd1306_WriteString("SPEED: ", Font_11x18, White);
+  ssd1306_SetCursor(5,24);
+  ssd1306_WriteString("RPM: ", Font_11x18, White);
   ssd1306_UpdateScreen();
-
-#endif
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-#ifdef SPEED_SENSING
+	  //----------------------------------------------------------
+	  // 1. MAGNET FLAG PROCESSING
+	  //----------------------------------------------------------
+
+	  //Get the current time as a reference
 	  uint32_t now = HAL_GetTick();
-	        GPIO_PinState current_hall_state = HAL_GPIO_ReadPin(HALLEFFECT_GPIO_Port, HALLEFFECT_Pin);
 
-	        // 1. EDGE DETECTION (Instantaneous)
-	        // Detects the moment the magnet arrives (Falling Edge)
-	        if (current_hall_state == GPIO_PIN_RESET && last_hall_state == GPIO_PIN_SET)
-	        {
-	            if (last_time != 0)
-	            {
-	                uint32_t diff = now - last_time;
+	  //If the flag for the magnet was triggered
+	  if (magnet_flag)
+	  {
+		  // Snapshot the time safely and reset the flag ensuring no other magnet pulse affects it
+		  __disable_irq();
+		  uint32_t current_pulse = pulse_time;
+		  magnet_flag = 0;
+		  __enable_irq();
 
-	                // Debounce: Ignore pulses faster than 3000 RPM (20ms gap) to filter noise
-	                if (diff > 20)
-	                {
-	                    // Store timing gap in the circular buffer
-	                    time_diffs[avg_index] = diff;
-	                    avg_index = (avg_index + 1) % AVG_SIZE;
+		  if (last_time != 0)
+		  {
+			  uint32_t diff = current_pulse - last_time;
 
-	                    // Track how many samples we have for the initial startup
-	                    if (samples_collected < AVG_SIZE) samples_collected++;
+			  // Debounce: Ignore pulses faster than 3000 RPM (20ms)
+			  if (diff > 20)
+			  {
+				  // 1. Subtract the OLD value from the running sum
+				  running_sum -= time_diffs[avg_index];
 
-	                    // Calculate the moving average of the time gaps
-	                    uint32_t sum = 0;
-	                    for(int i = 0; i < samples_collected; i++) {
-	                        sum += time_diffs[i];
-	                    }
+				  // 2. Store the NEW value in the circular buffer
+				  time_diffs[avg_index] = diff;
 
-	                    float avg_diff = (float)sum / (float)samples_collected;
+	  			  // 3. Add the NEW value to the running sum
+	  			  running_sum += time_diffs[avg_index];
 
-	                    // Calculate RPM from the averaged time gap
-	                    filtered_rpm = 60000.0f / avg_diff;
-	                }
-	            }
-	            last_time = now;
+	  			  avg_index = (avg_index + 1) % AVG_SIZE;
 
-	            // Visual feedback on the onboard LED
-	            HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-	        }
+	  			  if (samples_collected < AVG_SIZE)
+	  				  samples_collected++;
+			  }
+	  		}
 
-	        // Turn off feedback LED when magnet leaves
-	        if (current_hall_state == GPIO_PIN_SET)
-	        {
-	            HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
-	        }
+	  		// ALWAYS update last_time so the next pulse has a reference
+	  		last_time = current_pulse;
+	  	  }
 
-	        // Update state for next loop iteration
-	        last_hall_state = current_hall_state;
+	  	//----------------------------------------------------------
+	  	// 2. TIMED DISPLAY & CALCULATIONS (Every 300ms)
+	  	//----------------------------------------------------------
 
-	        // 2. TIMED DISPLAY & CALCULATIONS (Every 300ms)
-	        // This prevents the slow I2C display from making us miss magnet pulses
-	        if (now - last_display_time >= 300)
-	        {
-	            last_display_time = now;
+	  	if (now - last_display_time >= 300)
+	  	{
+	  		last_display_time = now;
 
-	            // Timeout: If no magnet seen for 2.5 seconds, the wheel has stopped
-	            if (now - last_time > 2500) {
-	                filtered_rpm = 0.0f;
-	                speed_kmh = 0.0f;
-	                samples_collected = 0; // Reset average buffer
-	            }
-	            else {
-	                // Convert RPM to km/h using the radius
-	                // Formula: (RPM * 2 * PI * R * 60) / 1,000,000
-	                speed_kmh = (filtered_rpm * (2.0f * PI * WHEEL_RADIUS_MM) * 60.0f) / 1000000.0f;
-	            }
+	  	     // Timeout: If no magnet seen for 2.5 seconds, we are stopped
+	  	     if (last_time != 0 && (now - last_time > 2500))
+	  	     {
+	  	    	 filtered_rpm = 0.0f;
+	  	    	 speed_kmh = 0.0f;
+	  	         samples_collected = 0;
+	  	         running_sum = 0;
+	  	         last_time = 0; // Require a fresh first pulse to start again
 
-	            // Prepare and update the OLED screen
-	            char buffer[25];
+	  	         for(int i = 0; i < AVG_SIZE; i++)
+	  	        	 time_diffs[i] = 0;
+	  	     }
 
-	            // Row 1: Display RPM
-//	            ssd1306_SetCursor(5, 34);
-//	            sprintf(buffer, "%.1f RPM  ", filtered_rpm);
-//	            ssd1306_WriteString(buffer, Font_7x10, White);
+	  	     else if (samples_collected > 0)
+	  	     {
+	  	         // Formula: (RPM * 2 * PI * R * 60) / 1,000,000
+	  	    	 filtered_rpm = (60000.0f * (float)samples_collected) / (float)running_sum;
+	  	         speed_kmh = filtered_rpm * RPM_TO_KMH_FACTOR;
+	  	     }
 
-	            // Row 2: Display Speed
-	            ssd1306_SetCursor(5, 31);
-	            sprintf(buffer, "%.2f km/h  ", speed_kmh);
-	            ssd1306_WriteString(buffer, Font_11x18, White);
+	  	     // Update the OLED screen
+	  	     char buffer[25];
+	  	     sprintf(buffer, "%.2f km/h  ", speed_kmh);
 
-	            // Push data to the screen
-	            ssd1306_UpdateScreen();
-	        }
-#endif
+	  	     ssd1306_SetCursor(68, 5);
+	  	     ssd1306_WriteString(buffer, Font_11x18, White);
 
-#ifndef SPEED_SENSING
-	 HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-	 HAL_Delay(500);
-#endif
+	  	     sprintf(buffer, "%.2f RPM  ", filtered_rpm);
+	  	     ssd1306_SetCursor(45, 24);
+	  	     ssd1306_WriteString(buffer, Font_11x18, White);
+	  	     ssd1306_UpdateScreen();
+	  	}
 
     /* USER CODE END WHILE */
 
@@ -228,10 +226,13 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL4;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -241,15 +242,19 @@ void SystemClock_Config(void)
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
   {
     Error_Handler();
   }
+
+  /** Enables the Clock Security System
+  */
+  HAL_RCC_EnableCSS();
 }
 
 /**
@@ -299,17 +304,18 @@ static void MX_GPIO_Init(void)
   /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : HALLEFFECT_Pin */
-  GPIO_InitStruct.Pin = HALLEFFECT_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(HALLEFFECT_GPIO_Port, &GPIO_InitStruct);
+  /*Configure GPIO pin : HALLEFFECT_PIN_Pin */
+  GPIO_InitStruct.Pin = HALLEFFECT_PIN_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(HALLEFFECT_PIN_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : LED_Pin */
   GPIO_InitStruct.Pin = LED_Pin;
@@ -318,6 +324,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LED_GPIO_Port, &GPIO_InitStruct);
 
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI1_IRQn);
+
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
   /* USER CODE END MX_GPIO_Init_2 */
@@ -325,6 +335,21 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
+//---------------------------------------------------------
+//CALLBACK LOGIC FOR THE MAGNET FLAG
+//--------------------------------------------------------
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+    if (GPIO_Pin == HALLEFFECT_PIN_Pin)
+    {
+        pulse_time = HAL_GetTick(); // Get the time the microsecond it happened
+        magnet_flag = 1;            // Set the flag for the main loop
+
+        // Quick visual feedback (Keep this very fast)
+        HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+    }
+}
 /* USER CODE END 4 */
 
 /**

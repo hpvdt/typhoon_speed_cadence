@@ -57,8 +57,13 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define HALLEFFECT_Pin GPIO_PIN_1
-#define HALLEFFECT_GPIO_Port GPIOA
+#define RESONATOR_IN_Pin GPIO_PIN_0
+#define RESONATOR_IN_GPIO_Port GPIOD
+#define RESONATOR_OUT_Pin GPIO_PIN_1
+#define RESONATOR_OUT_GPIO_Port GPIOD
+#define HALLEFFECT_PIN_Pin GPIO_PIN_1
+#define HALLEFFECT_PIN_GPIO_Port GPIOA
+#define HALLEFFECT_PIN_EXTI_IRQn EXTI1_IRQn
 #define LED_Pin GPIO_PIN_4
 #define LED_GPIO_Port GPIOA
 #define OLED_SCL_Pin GPIO_PIN_6
