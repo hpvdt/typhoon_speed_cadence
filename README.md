@@ -1,6 +1,25 @@
 # Typhoon Speed and Cadence
 
-General template repository for our hardware projects, especially one-off and self-contained projects like custom test equipment. This template assumes that the hardware is being designed in KiCad.
+This is the amazing repository for the amazing Speed and Cadance team.
+This embedded system uses an STM32 and a hall effect setup to accurately calculate the speed of the bike in real time, displaying the information to an OLED
+HOE: Oliver Cai, Juston Lo
+Lead: Daniel Dot
+Members: Luca M, Rena, Noah, Iris
+
+## Setup
+
+### THIS PART IS VERY IMPORTANT PLEASE READ
+
+We must all operate on the same versions, if we do not then stuff will break. We are currently using:
+- STM32CubeIDE 2.0.0
+- STM32CubeMX 6.16.0
+
+You must download both to program as the IDE is used oto program while the CubeMX is for the .ioc file to configure the board pinout.
+
+When writing code in the main.c, main.h, or any program where code is overwritten from the .ioc save, PLEASE ENSURE YOU ARE WRITING IN A USER CODE BLOCK, or else your code will be removed.
+
+The main code is found in main.c in the src folder, and whenever working on the code always work in the project folder, dont open the file standalone. 
+The logic for the code is commented in code, and any changes MUST also be commented for others to work simultaneously on it.
 
 ## Organization
 
