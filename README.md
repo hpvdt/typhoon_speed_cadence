@@ -6,7 +6,14 @@ HOE: Oliver Cai, Juston Lo
 Lead: Daniel Dot
 Members: Luca M, Rena, Noah, Iris
 
-## Setup
+MEMBERS ADD YOUR LAST NAMES PLEASE I DONT KNOW THEM :(
+
+## Hardware Setup
+
+We must all operate on the same main version of KiCad, 9.0.
+Ensure you are always working on the project file, never open the files standalone.
+
+## Firmware Setup
 
 ### THIS PART IS VERY IMPORTANT PLEASE READ
 
@@ -20,6 +27,8 @@ When writing code in the main.c, main.h, or any program where code is overwritte
 
 The main code is found in main.c in the src folder, and whenever working on the code always work in the project folder, dont open the file standalone. 
 The logic for the code is commented in code, and any changes MUST also be commented for others to work simultaneously on it.
+
+If there are any questions about the project, message me on disc dot2944, or email daniel.dot@mail.utoronto.ca
 
 ## Organization
 
