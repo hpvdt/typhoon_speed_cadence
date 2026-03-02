@@ -59,8 +59,6 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define USR_LED_Pin GPIO_PIN_4
 #define USR_LED_GPIO_Port GPIOA
-#define HALL_EFFECT_OUT_Pin GPIO_PIN_8
-#define HALL_EFFECT_OUT_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
 
