@@ -125,13 +125,13 @@ int main(void)
 	  //----------------------------------------------------------
 	  // 1. MAGNET FLAG PROCESSING
 	  //----------------------------------------------------------
-
 	  //Get the current time as a reference
 	  uint32_t now = HAL_GetTick();
 
 	  //If the flag for the magnet was triggered
 	  if (magnet_flag)
 	  {
+		  HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
 		  // Snapshot the time safely and reset the flag ensuring no other magnet pulse affects it
 		  __disable_irq();
 		  uint32_t current_pulse = pulse_time;
@@ -203,6 +203,12 @@ int main(void)
 	  	     sprintf(buffer, "%.2f RPM  ", filtered_rpm);
 	  	     ssd1306_SetCursor(45, 24);
 	  	     ssd1306_WriteString(buffer, Font_11x18, White);
+
+//	  	     ssd1306_UpdatePage(0);
+//	  	    ssd1306_UpdatePage(1);
+//	  	    ssd1306_UpdatePage(2);
+
+
 	  	     ssd1306_UpdateScreen();
 	  	}
 
@@ -273,7 +279,7 @@ static void MX_I2C1_Init(void)
 
   /* USER CODE END I2C1_Init 1 */
   hi2c1.Instance = I2C1;
-  hi2c1.Init.ClockSpeed = 100000;
+  hi2c1.Init.ClockSpeed = 400000;
   hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
   hi2c1.Init.OwnAddress1 = 0;
   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;

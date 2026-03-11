@@ -192,6 +192,39 @@ void ssd1306_UpdateScreen(void) {
     }
 }
 
+/* Update a single page of the screenbuffer to the screen */
+void ssd1306_UpdatePage(uint8_t page) {
+    // For a 128x64 display:
+    //
+    // 64px height / 8 pixels per page = 8 pages total
+    //
+    // Page layout:
+    // page 0  -> y = 0  to 7
+    // page 1  -> y = 8  to 15
+    // page 2  -> y = 16 to 23
+    // page 3  -> y = 24 to 31
+    // page 4  -> y = 32 to 39
+    // page 5  -> y = 40 to 47
+    // page 6  -> y = 48 to 55
+    // page 7  -> y = 56 to 63
+
+    // Check that the requested page is valid
+    if(page > 7) {
+        // Don't write outside display RAM
+        return;
+    }
+
+    // Set the current RAM page address
+    ssd1306_WriteCommand(0xB0 + page);
+
+    // Set column start address
+    ssd1306_WriteCommand(0x00 + SSD1306_X_OFFSET_LOWER);
+    ssd1306_WriteCommand(0x10 + SSD1306_X_OFFSET_UPPER);
+
+    // Send the page data (128 bytes for a 128px wide display)
+    ssd1306_WriteData(&SSD1306_Buffer[SSD1306_WIDTH * page], SSD1306_WIDTH);
+}
+
 /*
  * Draw one pixel in the screenbuffer
  * X => X Coordinate
